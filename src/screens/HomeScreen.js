@@ -8,6 +8,7 @@ import JSONItem from '../components/JSONItem';
 import SearchBar from '../components/SearchBar';
 
 
+
 export default function HomeScreen() {
 
     const [error, setError] = useState(null);
@@ -50,6 +51,7 @@ export default function HomeScreen() {
     <SearchBar data={data}/>
     </View>
     <JSONItem data={data}/>
+ 
     </View>
   )
 }

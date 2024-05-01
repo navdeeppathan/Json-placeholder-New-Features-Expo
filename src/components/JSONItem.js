@@ -1,8 +1,10 @@
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import LikedButton from './LikedButton';
+import Comments from './Comments';
 
-export const localRestaurants = [
+
+export const localdata = [
     {
       hello:"hello",
       name: "Benihana",
@@ -30,15 +32,17 @@ export default function JSONItem(props) {
       <View key={index}  style={{
           marginTop:10,
           padding:15,backgroundColor:"white"}}>
-        <JsonBody body={item.body} userId={item.userId}  />
+        <JsonBody body={item.body} userId={item.userId} id={item.id} />
         <JsonInfo 
         id={item.id}
         title={item.title}
       />
+      <Comments id={item.id}/>
       </View>
-      
      ))}
+
       </TouchableOpacity>
+    
       </View>
       </ScrollView>
        </>
@@ -50,7 +54,7 @@ const JsonBody=(props)=>(
   <Text style={{width:"100%", height:180 ,backgroundColor:'#EDEDED',padding:20,borderBottomLeftRadius:15,borderBottomRightRadius:15}}>{props.body}
   </Text>
    
-    <LikedButton/>
+    <LikedButton id={props.id} />
     
     </>
 )
